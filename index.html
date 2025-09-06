@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dr May Pharmacy — Modern E-Pharmacy</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💊</text></svg>">
+</head>
+<body>
+  <!-- Background orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#home"><span class="brand-pill">Dr May</span> Pharmacy</a>
+
+      <div class="search-inline">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M21 21l-4.2-4.2M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="searchInput" type="search" placeholder="Search medicines, cosmetics, vitamins…"/>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#offers">Offers</a>
+        <a href="#benefits">Why Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/201012004242" target="_blank" class="social small">WhatsApp</a>
+        <a href="https://www.facebook.com/profile.php?id=100063693175405" target="_blank" class="social small">Facebook</a>
+        <a href="https://www.instagram.com/dr.maypharmacy/" target="_blank" class="social small">Instagram</a>
+
+        <button class="icon-btn" id="openCart" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" class="icon">
+            <path d="M6 6h15l-1.5 9H7.5L6 6Z M6 6L5 3H2" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="21" r="1.7"/><circle cx="18" cy="21" r="1.7"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">trusted online care</div>
+        <h1>Care made simple, <span class="grad-text">delivered</span> to your door</h1>
+        <p>Shop authentic medicines, wellness, and cosmetics with secure checkout — pay by <strong>Credit Card</strong> or <strong>Cash on Delivery</strong>.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Shop now</a>
+          <a href="#offers" class="btn btn-outline">View offers</a>
+        </div>
+        <div class="chip-row">
+          <button class="chip" data-chip="Medicines">Medicines</button>
+          <button class="chip" data-chip="Cosmetics">Cosmetics</button>
+          <button class="chip" data-chip="Wellness">Wellness</button>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-stamp">NEW</div>
+        <div class="hero-inner-card">
+          <h3>Today’s Top Picks</h3>
+          <ul>
+            <li>Paracetamol 500mg — <strong>$3.50</strong></li>
+            <li>Hyaluronic Serum — <strong>$12.90</strong></li>
+            <li>SPF 50+ Sunscreen — <strong>$9.50</strong></li>
+          </ul>
+          <a href="#products" class="mini-cta">Explore all →</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#products" class="scroll-down" aria-label="Scroll to products">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" class="chev"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </a>
+  </section>
+
+  <!-- OFFERS SLIDER -->
+  <section class="offers" id="offers">
+    <div class="container">
+      <div class="section-head">
+        <h2>Special Offers</h2>
+        <div class="slider-controls">
+          <button class="ctrl" id="prevOffer" aria-label="Previous offer">‹</button>
+          <button class="ctrl" id="nextOffer" aria-label="Next offer">›</button>
+        </div>
+      </div>
+
+      <div class="slider" id="offerSlider">
+        <!-- Slides injected by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filters" id="filters">
+    <div class="container filters-grid">
+      <div class="field">
+        <label for="categorySelect">Category</label>
+        <select id="categorySelect">
+          <option>All</option>
+          <option>Medicines</option>
+          <option>Cosmetics</option>
+          <option>Wellness</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="sortSelect">Sort by</label>
+        <select id="sortSelect">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Top Rated</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="priceRange">Max price: <span id="priceValue">$50</span></label>
+        <input type="range" id="priceRange" min="3" max="80" value="50" step="1"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS GRID -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-head">
+        <h2>Shop Products</h2>
+        <p class="muted">Bestsellers and daily essentials you’ll love.</p>
+      </div>
+
+      <div id="productGrid" class="grid">
+        <!-- Product cards injected by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits" id="benefits">
+    <div class="container benefits-grid">
+      <div class="benefit-card sr">
+        <div class="benefit-ico">🚚</div>
+        <h3>Fast Delivery</h3>
+        <p>On-time delivery with updates right to your phone.</p>
+      </div>
+      <div class="benefit-card sr">
+        <div class="benefit-ico">🔒</div>
+        <h3>Secure Payments</h3>
+        <p>Pay by card or cash — your choice, always secure.</p>
+      </div>
+      <div class="benefit-card sr">
+        <div class="benefit-ico">✨</div>
+        <h3>Quality Assured</h3>
+        <p>Genuine brands stored under proper conditions.</p>
+      </div>
+      <div class="benefit-card sr">
+        <div class="benefit-ico">💬</div>
+        <h3>Pharmacist Support</h3>
+        <p>Need help? Chat with our licensed pharmacists.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#home"><span class="brand-pill">Dr May</span> Pharmacy</a>
+        <p class="muted">Modern e-pharmacy experience you’ll love.</p>
+      </div>
+
+      <form class="newsletter" id="newsletterForm">
+        <label for="email">Get offers & health tips</label>
+        <div class="newsletter-row">
+          <input type="email" id="email" placeholder="you@example.com" required />
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </div>
+        <small class="muted">By subscribing, you agree to our privacy policy.</small>
+      </form>
+
+      <div class="footer-col">
+        <h4>Social</h4>
+        <a href="https://wa.me/201012004242" target="_blank">WhatsApp</a>
+        <a href="https://www.instagram.com/dr.maypharmacy/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100063693175405" target="_blank">Facebook</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Dr May Pharmacy. All rights reserved.</p>
+      <a href="#" class="muted">Terms</a>
+      <a href="#" class="muted">Privacy</a>
+    </div>
+  </footer>
+
+<!-- CART DRAWER -->
+<div class="drawer" id="cartDrawer" aria-hidden="true">
+  <!-- overlay first -->
+  <div class="drawer-overlay" id="cartOverlay" aria-hidden="true"></div>
+
+  <!-- cart panel above overlay -->
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <h3>Your Cart</h3>
+      <button class="icon-btn" id="closeCart" aria-label="Close cart" type="button">
+        <svg viewBox="0 0 24 24" class="icon">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="drawer-foot">
+      <div class="totals">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">$0.00</strong>
+      </div>
+      <button id="checkoutBtn" class="btn btn-primary btn-full" type="button">Checkout</button>
+    </div>
+  </div>
+</div>
+
+  <!-- CHECKOUT MODAL (single, fixed) -->
+  <dialog id="checkoutModal" class="modal" aria-modal="true">
+    <form method="dialog" class="modal-card" id="checkoutForm">
+      <div class="modal-head">
+        <h3>Checkout</h3>
+        <!-- IMPORTANT: type="button" so it doesn't submit the form -->
+        <button class="icon-btn" id="closeCheckout" aria-label="Close" type="button">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="field">
+          <label for="custName">Full Name</label>
+          <input id="custName" required placeholder="Your name"/>
+        </div>
+        <div class="field">
+          <label for="custPhone">Phone</label>
+          <input id="custPhone" required placeholder="+20..."/>
+        </div>
+        <div class="field">
+          <label for="custAddress">Address</label>
+          <input id="custAddress" required placeholder="Street, City"/>
+        </div>
+
+        <div class="field">
+          <label for="paymentMethod">Payment Method</label>
+          <select id="paymentMethod">
+            <option value="cod">Cash on Delivery</option>
+            <option value="card">Credit Card</option>
+          </select>
+        </div>
+
+        <div id="cardFields" class="card-fields hidden">
+          <div class="field">
+            <label for="cardNumber">Card Number</label>
+            <input id="cardNumber" inputmode="numeric" placeholder="1234 5678 9012 3456"/>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="cardExp">Expiry</label>
+              <input id="cardExp" placeholder="MM/YY"/>
+            </div>
+            <div class="field">
+              <label for="cardCvc">CVC</label>
+              <input id="cardCvc" inputmode="numeric" placeholder="123"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-box">
+          <div class="summary-line"><span>Items</span><strong id="summaryItems">0</strong></div>
+          <div class="summary-line"><span>Subtotal</span><strong id="summarySubtotal">$0.00</strong></div>
+          <div class="summary-line"><span>Delivery</span><strong id="summaryDelivery">$2.00</strong></div>
+          <div class="summary-line total"><span>Total</span><strong id="summaryTotal">$0.00</strong></div>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <!-- type="button" to avoid accidental submit -->
+        <button class="btn btn-outline" id="cancelCheckout" type="button">Cancel</button>
+        <button class="btn btn-primary" id="placeOrder" type="submit">Place Order</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" class="back-top" aria-label="Back to top">↑</button>
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
+</body>
+</html>
